@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <th><center><Cabeçaljo 1</center></th>
+            <th><center>Cabeçalho 2</center></th>
+        </tr>
+
+        <tr>
+            <td><center>Linha 1</center></td>
+            <td><center>linha 2</center></td>
+
+
+        </tr>
+
+        <tr>
+            <td><center>Linha 3</center></td>
+            <td><center>Linha 4 </center></td>
+
+        </tr>
+
+
+    </table>
+</body>
+</html>

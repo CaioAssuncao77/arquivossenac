@@ -1,0 +1,107 @@
+html {
+  scroll-behavior:smooth;
+}
+
+h1
+{ 
+    font-size: large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    align-content: center;
+}
+h2
+{
+    color:red;
+    padding: 10px;
+    background-color: black;
+    border-style: outset;
+    border-color: gray;
+    border-radius: 40px;
+    scroll-behavior: smooth;
+}
+#header{
+    color:rgb(255, 255, 255);
+    font-size: 50px;
+    background-color: black;
+    padding: 50px;
+    padding-top: 60px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 50px;
+    float: initial;
+    border-radius: 100px;
+    border-color: gray;
+    align-items: center;
+    gap: 30px;
+}
+
+#img1{
+    float: right;
+    height: 150px;
+    width: auto;   
+    padding-left: 50px;   
+    padding-top: 10px;  
+    padding-right: 50px;
+    padding-bottom: 10px;
+    
+}
+#img{
+    float: left;
+    height: 150px;
+    width: auto;   
+    padding-left: 50px;   
+    padding-top: 10px;  
+    padding-right: 50px;
+    padding-bottom: 10px;   
+}
+#sobre{
+    padding: 30px;
+    padding-right:30px ;
+    padding-left: 30px;
+    background-color: gray;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    border-style: outset;
+    border-color: black;
+    border-radius: 60px;
+    justify-content: center;
+
+}
+
+#bagui{
+    padding: 50px;
+    padding-right:30px ;
+    padding-left: 50px;
+    background-color: gray;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    border-style: outset;
+    border-color: black;
+    border-radius: 60px;
+}
+
+#balao{
+    padding: 30px;
+    padding-right:30px ;
+    padding-left: 30px;
+    background-color: gray;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    border-style: outset;
+    border-color: black;
+    border-radius: 60px;
+    justify-content: center;
+}
+
+a {
+  color: white;
+  font-weight: bold;
+}
+
+.imgjogs{
+
+    height: 500px;
+    width: 600px;
+
+}
+

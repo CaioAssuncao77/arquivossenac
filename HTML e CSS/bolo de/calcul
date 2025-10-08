@@ -1,0 +1,6 @@
+numero = int(input("Insira um numero: "))
+numero2 = int(input("Insira outro número"))
+
+resultado =  numero + numero2, numero - numero2, numero2 - numero, numero/numero2, numero * numero2, numero**numero2
+
+print(resultado)

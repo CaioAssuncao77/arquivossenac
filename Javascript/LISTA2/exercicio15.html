@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custo Emprestimo</title>
+</head>
+<body>
+    <script>
+        var valor_emprestimo, prazo, montante, parcela
+
+
+        valor_emprestimo = parseFloat(prompt("Informe o valor do emprestimo. "))
+        parcela = parseFloat(prompt("Informe a taxa mensal de juros do emprestimo. "))
+        prazo = parseFloat(prompt("Informe o prazo do emprestimo. "))
+        
+        montante = valor_emprestimo + (parcela * prazo)
+
+        alert("Valor do montante "+ montante.toFixed(2))
+        alert("Valor da parcela mensal "+ parcela.toFixed(2))
+        alert("Valor dos Juros "+ taxadejurosmensal.toFixed(2))
+        
+    </script>
+</body>
+</html>

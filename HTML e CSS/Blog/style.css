@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+article{
+    padding: 50px;
+    box-shadow:  0 4px 8px rgba(3, 3, 3, 0.308);
+    border-radius: 6px;
+    background-color: rgba(153, 153, 153, 0.411);
+ }
+
+article p{
+    color: white;
+    font: bolder;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+article:hover{
+    transform: translateY(-5px);
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    flex-direction: row;
+    padding: 50px;
+
+}
+
+aside{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(3, 3, 3, 0.308);
+    flex-wrap: wrap;
+}
+header{
+    display: flex;
+    padding: 10px;
+    background-color: #333;
+    color: white;    
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: larger;
+    font-weight: bold;
+}
+section{
+    display: flex;
+    flex-wrap: wrap;
+    margin:10px;
+    gap: 10px;
+}
+
+nav a{
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+}
+nav{
+    display: flex;
+    gap: 10px;
+}
+
+footer{
+    display: flex;
+    padding: 10px;
+    background-color: #333;
+    color: white;    
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: larger;
+    font-weight: bold;
+}
+

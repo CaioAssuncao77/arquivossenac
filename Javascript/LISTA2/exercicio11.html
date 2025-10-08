@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura °C p °F</title>
+</head>
+<body>
+    <script>
+        var valor_principal, taxa_juros, meses, montante
+
+        valor_principal = parseFloat(prompt("Informe o valor principal"))
+        taxa_juros = parseFloat(prompt("Informe a taxa de juros"))
+        meses = parseFloat(prompt("Informe a quatidade de meses"))
+
+        montante = valor_principal *(1+ taxa_juros * meses)
+
+        alert("O montante é " + montante)
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculo Caio Assunção</title>
+</head>
+<body>
+    <h1> CAIO ASSUNÇÃO DE CARVALHO<h1>
+    <p> Numero de telefone: 139969642077 <br> email: caiocaio@caiocaio.com <br> Endereço: Rua das Pedrinhas, 77</p>
+    <h2> Comptências:<h2>
+        <p> Quase nenhuma, mas consigo me virar</p>
+
+
+
+    </body>
+</html>
