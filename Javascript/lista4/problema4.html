@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadora</title>
+</head>
+<body>
+    <script>
+        var numerominutos, valor_pagar, planbasico
+       planbasico = 50.00
+
+        numerominutos = parseFloat(prompt("Informe sua quantidade de minutos"))
+
+        if (numerominutos > 100){
+            valor_pagar = planbasico + (numerominutos - 100)*2
+            alert(`O Valor a ser pago é de ${valor_pagar}`)
+        }
+        else{
+            alert(`O valor a ser pago é ${planbasico}`)
+        }
+    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baskhara</title>
+</head>
+<body>
+    <script>
+        var num1, num2, num3, delta, x1, x2
+
+        num1 = parseFloat(prompt("Insira o um número"))
+        num2 = parseFloat(prompt("Insira o um número"))
+        num3 = parseFloat(prompt("Insira o um número"))
+
+        delta = (num2 ** 2) - (4 * num1 * num3)  
+            
+
+        if (delta <= 0)
+            alert(`Delta é 0 então se foda. VADIA.`)
+        else
+            num2 = -num2 
+            x1 = (num2 + Math.sqrt(delta))/ (num1 * 2)
+            x2 = (num2 - Math.sqrt(delta))/ (num1 * 2)
+
+            alert(`X1 = ${x1}, X2 ${x2} `)
+        
+    </script>
+    
+</body>
+</html>

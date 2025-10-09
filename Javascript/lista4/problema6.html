@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glicose</title>
+</head>
+<body>
+    <script>
+        let glicose = parseFloat(prompt("Insira o valor da sua glicose"))
+
+        if (glicose <= 100){
+            alert(`${glicose} glicose em niveis normais`)
+        }
+        else if (glicose > 100 && glicose < 140){
+            alert(`${glicose} Niveis de glicose elevados! Tome cuidado`)
+        }
+        else{
+            alert(`${glicose} NIVEL DIABÉTICO`)
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APROVADO REPROVADO</title>
+</head>
+<body>
+    <script>
+        var nota1sem, nota2sem, media
+        nota1sem = parseFloat(prompt("Insira a nota que o aluno teve no primeiro semestre"))
+        nota2sem = parseFloat(prompt("Insira a nota que o aluno teve no segundo semestre"))
+
+        media = nota1sem + nota2sem
+
+        if (media < 60.00)
+            alert(`Aluno Reprovado nota de ${media}`)
+        else
+            alert(`Aluno aprovada, nota de ${media}`)
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troco</title>
+</head>
+<body>
+    <script>
+        var preco_produto, quantidade_comprada, dinheiro_recebido,preco_total, troco 
+
+        preco_produto = parseFloat(prompt("Insira o preço unitário do produto"))
+        quantidade_comprada = parseInt(prompt("Insira a quantidade de itens comprados"))
+        dinheiro_recebido = parseFloat(prompt("Insira o valor que foi pago"))
+        preco_total = (preco_produto * quantidade_comprada)
+
+        troco = dinheiro_recebido - preco_total
+
+        if (dinheiro_recebido < preco_total){
+            let diferenca = preco_total - dinheiro_recebido
+            alert(`Valor insuficiente falta R$${diferenca}`)
+        }
+        else if (dinheiro_recebido > preco_total) {
+            alert(`Obrigado, volte sempre \n TROCO: R$${troco}`)
+        }
+        else{
+            alert("Volte sempre")
+        }
+
+    
+    </script>
+    
+</body>
+</html>
