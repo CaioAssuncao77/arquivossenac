@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+    <script>
+        var hora_inicio, hora_final, tempo, total, tempoAux
+
+        hora_inicio = parseFloat(prompt("Informe que hora em que começou o jogo:"))
+        hora_final = parseFloat(prompt("Informe a hora em que acabou o jogo: "))
+        tempo = 24
+
+        if(hora_inicio > hora_final){
+            tempoAux = hora_inicio - hora_final
+            total = tempo - tempoAux
+            alert(`O tempo de jogo foi de ${total} horas`)
+        }
+        else if(hora_inicio < hora_final){
+            total = hora_final - hora_inicio
+            alert(`O tempo de jogo foi de ${total} horas`)
+        }
+        else{
+            alert(`O tempo de jogo foi de 24 horas`)
+        }
+
+    </script>
+</body>
+</html>

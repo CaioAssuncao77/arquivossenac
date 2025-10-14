@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    <script>
+        var medida, temperatura, celsius, fahrenheit
+
+        medida = prompt("Digite  C para medir a temperatura em Celsius \n Digite F para medir a temperatura em Fahrnheit")
+        
+        if (medida == "F"){
+                    temperatura = parseFloat(prompt("Insira a temperatura em celsius a ser convertida para Fahrenheit"))
+                    fahrenheit = [temperatura * (9/5)] + 32   
+                    alert(`A temperatura em Fahrenheit é de ${fahrenheit}`)
+        }
+        else if (medida =="C"){
+                    temperatura = parseFloat(prompt("Insira a temperatura em Fahrenheit a ser convertida para Celsius: "))
+                    celsius = [temperatura - 32 * (9/5)] 
+                    
+                    alert(`A temperatura em Celsius é de ${celsius}`)
+        }
+        else{
+            alert("Esse valor não é válido")
+        }
+    </script>
+    
+</body>
+</html>
