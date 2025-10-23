@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+
+<body>
+    <script>
+        var y, x
+
+        do {
+
+            x = parseFloat(prompt("Informe o valor de X"))
+            y = parseFloat(prompt("Informe o valor de Y"))
+
+
+            if (x > 0 && y > 0) {
+                alert(`Quadrante Q1`)
+            }
+            else if (x < 0 && y < 0) {
+                alert(`Quadrante Q3`)
+            }
+            else if (x < 0 && y > 0) {
+                alert(`Quadrante Q2`)
+            }
+            else if (x > 0 && y < 0) {
+                alert(`Quadrante Q4`)
+            }
+            else if (x == 0) {
+                alert("Eixo Y")
+            }
+            else if (y == 0) {
+                alert("Eixo X")
+            }
+        }while(y && x != 0){
+            alert("ORIGEM")
+        }
+
+    </script>
+</body>
+
+</html>

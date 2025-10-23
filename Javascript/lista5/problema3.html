@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <script>
+        let senhareal = "80085"
+        let tentativas = 0
+        let tentativas_max = 3
+        do{
+            let senha = prompt("Insira sua senha: ")
+            if (senha!= senhareal){
+                tentativas++
+                alert("Senha errada")
+                
+            }
+            else{
+                alert("Acesso concedido")
+                break
+        }
+        }
+        while(tentativas < tentativas_max){
+        if (tentativas >= tentativas_max)
+            alert("Acabaram suas chances")
+        }
+        </script>
+</body>
+</html>
