@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="open" onclick="abrir()">
+    <input type="button" value="close" onclick="close()">
+    <input type="button" value="Imprimir" onclick="window.print()">
+    <script>
+        let janela
+
+        function abrir(){
+            janela = window.open('https://youtu.be/o1MNXjsifZU?si=OM9YwPpMqlWRiIcH','Youtube','_blank')
+        }
+        function close(){
+            janela = window.close()
+        }
+    </script>
+</body>
+</html>

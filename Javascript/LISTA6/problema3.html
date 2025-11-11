@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let produtos = ["monitor", "cabo ethernet", "teclado mecânico", "Mouse gamer", "Caixinha de som para computador"]
+        
+
+        for(let i = 0; i < produtos.length; i++){
+            let numeroproduto = i+1
+            alert(`O produto ${produtos[i]} e é o número ${[numeroproduto]} do catálogo`)
+        }
+
+        produtos.pop(4)
+
+        let produtosaux = ["monitor", "cabo ethernet", "teclado mecânico", "Mouse gamer", "Caixinha de som para computador"]
+
+        alert(`O produto ${produtosaux[4]} foi removido`)
+        </script>
+</body>
+</html>
