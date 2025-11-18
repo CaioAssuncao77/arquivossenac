@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #eec8c3;
+}
+header{
+    background-image:linear-gradient(to bottom, #e98375, #eec8c3);
+}
+#imagem_titulo{
+    display: flex;
+    position:inherit;     
+    border: 1px none solid;
+    width: 300px;    
+}
+#imagem_logo{
+    display: flex;
+    position:inherit;     
+    border: 1px none solid;
+    width: 100px;
+    height: 100px;
+}
+#conjunto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bloco_login{
+    border: 2px black solid;
+    box-shadow: 5px 5px 5px black;
+    height: 500px;
+    width: 500px;
+    background-color: white;
+    
+}
+#info_login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+input{
+    width: 80%;
+    height: 30px;
+}
+
+footer{
+    margin: 0%;
+    border: 2px red solid;
+    width: auto;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

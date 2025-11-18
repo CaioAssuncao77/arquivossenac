@@ -9,16 +9,45 @@
 </head>
 
 <body>
-    <header><div id="conjunto">
-        <img src="img/IMG-20251107-WA0057.jpg" alt="" id="imagem_titulo">
-        <img src="img/logotitulo.png" id="imagem_logo" >
-         </div>
-        <nav>
-            <a href="">Home</a> |
-            <a href="">Produtos</a> |
-            <a href="">Contato</a>
-            <input type="text">  
-        </nav>
+    <header>
+        <div id="conjunto">
+            <img src="img/IMG-20251107-WA0057.jpg" alt="" id="imagem_titulo">
+            <img src="img/logotitulo.png" id="imagem_logo">
+        </div>
+        <div class="nav-wrapper">
+            <button class="arrow left">←</button>
+
+            <nav class="nav-carousel" id="carousel">
+                <button><a href="index.html">Home</a></button>
+                <button>Catálogo</button>
+                <button><a href="">Personalizar</a></button>
+                <button>Sobre</button>
+                <button>Contato</button>
+                <button><a href="login.html">Login</a></button>
+            </nav>
+
+            <button class="arrow right">→</button>
+        </div>
+
+        <script>
+            const carousel = document.getElementById("carousel");
+
+            document.querySelector(".arrow.left").addEventListener("click", () => {
+                carousel.scrollBy({
+                    left: -200,
+                    behavior: "smooth"
+                });
+            });
+
+            document.querySelector(".arrow.right").addEventListener("click", () => {
+                carousel.scrollBy({
+                    left: 200,
+                    behavior: "smooth"
+                });
+            });
+
+        </script>
+
     </header>
 
     <main>
@@ -97,10 +126,10 @@
             </div>
         </div>
         <h3>Material Escolar</h3>
+        <div>
             <div>
-                <div>
-                </div>
             </div>
+        </div>
         <h3>Quebra Cabeça</h3>
         <div>
             <div>
@@ -138,7 +167,7 @@
         </div>
     </div>
     <footer>
-        &copy 
+        &copy
     </footer>
 </body>
 
