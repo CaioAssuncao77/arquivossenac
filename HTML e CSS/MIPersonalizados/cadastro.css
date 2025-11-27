@@ -61,14 +61,21 @@ main{
     border-radius: 3%;
     
 }
+#info_nome{
+    padding: 20px;
+    margin: 5%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
 #info_email{
-    padding: 30px;
+    padding: 20px;
     margin: 5%;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    
-    
+    flex-wrap: wrap;    
 }
 #info_senha{
     padding: 20px;
@@ -87,6 +94,7 @@ input{
     align-items: center;
     border-style: solid;
     border-color: black;
+    margin: 0;
 }
 #divBotao{
     display: flex;
