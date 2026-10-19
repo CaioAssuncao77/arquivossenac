@@ -1,0 +1,2636 @@
+ 
+/* =========================================================
+   FONTE DA LOJA
+   ========================================================= */
+ 
+/*
+   Carrega a fonte Inter para deixar toda a interface
+   da TechStore com uma aparência moderna.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+ 
+ 
+ 
+/* =========================================================
+   CONFIGURAÇÃO GERAL
+   ========================================================= */
+ 
+/*
+   Remove as margens e espaçamentos automáticos do navegador
+   para que possamos controlar exatamente o posicionamento
+   dos elementos da TechStore.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+ 
+/*
+   Centraliza as principais cores utilizadas na loja.
+ 
+   Dessa maneira, se quisermos mudar a identidade visual
+   da TechStore futuramente, podemos alterar as cores
+   neste único local.
+*/
+:root {
+ 
+    --fundo: #f4f6f8;
+ 
+    --branco: #ffffff;
+ 
+    --texto: #172033;
+ 
+    --suave: #697386;
+ 
+    --borda: #e4e8ee;
+ 
+    --primaria: #2563eb;
+ 
+    --primaria-escura: #1d4ed8;
+ 
+    --menu: #111827;
+ 
+    --menu-suave: #9ca3af;
+ 
+    --sucesso: #16a34a;
+ 
+    --sombra: 0 12px 35px rgba(15, 23, 42, 0.08);
+}
+ 
+ 
+/*
+   Define a aparência geral de todas as páginas.
+ 
+   O fundo cinza claro cria contraste com os cartões
+   brancos utilizados no conteúdo da loja.
+*/
+body {
+ 
+    font-family: 'Inter', sans-serif;
+ 
+    background: var(--fundo);
+ 
+    color: var(--texto);
+ 
+}
+ 
+ 
+/*
+   Remove o sublinhado padrão dos links.
+ 
+   Cada botão e link da loja receberá sua própria aparência
+   através das classes específicas.
+*/
+a {
+ 
+    text-decoration: none;
+ 
+    color: inherit;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   ESTRUTURA PRINCIPAL
+   ========================================================= */
+ 
+/*
+   Garante que a aplicação ocupe pelo menos
+   toda a altura da tela.
+*/
+.aplicacao {
+ 
+    min-height: 100vh;
+ 
+}
+ 
+ 
+/*
+   Mantém o menu lateral fixo no lado esquerdo.
+ 
+   Enquanto o usuário navega pelo conteúdo da loja,
+   o menu permanece disponível para acessar as outras áreas.
+*/
+.menu-lateral {
+ 
+    position: fixed;
+ 
+    left: 0;
+ 
+    top: 0;
+ 
+    width: 255px;
+ 
+    height: 100vh;
+ 
+    background: var(--menu);
+ 
+    color: var(--branco);
+ 
+    padding: 28px 18px;
+ 
+    display: flex;
+ 
+    flex-direction: column;
+ 
+    z-index: 10;
+ 
+}
+ 
+ 
+/*
+   Organiza o nome da TechStore e o ícone
+   no topo do menu lateral.
+*/
+.marca {
+ 
+    display: flex;
+ 
+    align-items: center;
+ 
+    gap: 12px;
+ 
+    padding: 0 10px 28px;
+ 
+}
+ 
+ 
+/*
+   Cria o quadrado azul com a letra T
+   que funciona como identificação visual da loja.
+*/
+.icone-marca {
+ 
+    width: 42px;
+ 
+    height: 42px;
+ 
+    background: var(--primaria);
+ 
+    border-radius: 12px;
+ 
+    display: flex;
+ 
+    align-items: center;
+ 
+    justify-content: center;
+ 
+    font-size: 20px;
+ 
+    font-weight: 800;
+ 
+}
+ 
+ 
+/*
+   Mantém o nome da loja destacado no menu.
+*/
+.marca strong {
+ 
+    display: block;
+ 
+    font-size: 18px;
+ 
+}
+ 
+ 
+/*
+   Destaca a palavra "Store" com uma cor diferente
+   para reforçar a identidade visual da TechStore.
+*/
+.marca strong span {
+ 
+    color: #60a5fa;
+ 
+}
+ 
+ 
+/*
+   Apresenta a descrição "Informática"
+   abaixo do nome da loja.
+*/
+.marca small {
+ 
+    display: block;
+ 
+    color: var(--menu-suave);
+ 
+    margin-top: 3px;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   MENU DE NAVEGAÇÃO
+   ========================================================= */
+ 
+/*
+   Organiza os links do menu um abaixo do outro.
+*/
+.navegacao {
+ 
+    display: flex;
+ 
+    flex-direction: column;
+ 
+    gap: 7px;
+ 
+}
+ 
+ 
+/*
+   Cria o formato dos links utilizados
+   para navegar entre as páginas da loja.
+*/
+.navegacao a {
+ 
+    display: flex;
+ 
+    align-items: center;
+ 
+    gap: 12px;
+ 
+    padding: 13px 14px;
+ 
+    border-radius: 10px;
+ 
+    color: var(--menu-suave);
+ 
+    transition: 0.2s;
+ 
+}
+ 
+ 
+/*
+   Quando o usuário passa o mouse sobre uma opção,
+   ela ganha destaque para indicar que pode ser clicada.
+*/
+.navegacao a:hover {
+ 
+    background: rgba(255, 255, 255, 0.06);
+ 
+    color: var(--branco);
+ 
+}
+ 
+ 
+/*
+   Identifica visualmente a página que está aberta.
+ 
+   Na página de produtos, por exemplo, o link Produtos
+   receberá essa classe.
+*/
+.navegacao a.ativo {
+ 
+    background: var(--primaria);
+ 
+    color: var(--branco);
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   ÁREA INFERIOR DO MENU
+   ========================================================= */
+ 
+/*
+   Empurra o cartão de ajuda para o final do menu lateral,
+   deixando-o separado das opções de navegação.
+*/
+.menu-inferior {
+ 
+    margin-top: auto;
+ 
+}
+ 
+ 
+/*
+   Cria o cartão de atendimento exibido
+   na parte inferior do menu.
+*/
+.card-ajuda {
+ 
+    display: flex;
+ 
+    align-items: center;
+ 
+    gap: 10px;
+ 
+    padding: 14px;
+ 
+    background: rgba(255, 255, 255, 0.06);
+ 
+    border: 1px solid rgba(255, 255, 255, 0.08);
+ 
+    border-radius: 12px;
+ 
+}
+ 
+ 
+/*
+   Cria o círculo utilizado para apresentar
+   o ponto de interrogação do atendimento.
+*/
+.icone-ajuda {
+ 
+    width: 34px;
+ 
+    height: 34px;
+ 
+    border-radius: 50%;
+ 
+    background: rgba(255, 255, 255, 0.1);
+ 
+    display: flex;
+ 
+    align-items: center;
+ 
+    justify-content: center;
+ 
+}
+ 
+ 
+/*
+   Destaca o título da mensagem de ajuda.
+*/
+.card-ajuda strong {
+ 
+    display: block;
+ 
+    font-size: 12px;
+ 
+}
+ 
+ 
+/*
+   Apresenta "Fale conosco" abaixo
+   do título de atendimento.
+*/
+.card-ajuda small {
+ 
+    display: block;
+ 
+    color: var(--menu-suave);
+ 
+    margin-top: 3px;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================= */
+ 
+/*
+   Reserva o espaço ocupado pelo menu lateral.
+ 
+   Como o menu possui 255px, o conteúdo começa depois
+   desses 255px para que uma área não fique sobre a outra.
+*/
+.conteudo {
+ 
+    margin-left: 255px;
+ 
+    min-height: 100vh;
+ 
+}
+ 
+ 
+/*
+   Cria o cabeçalho superior das páginas.
+ 
+   O título fica à esquerda e a identificação da loja
+   fica à direita.
+*/
+.topo {
+ 
+    min-height: 92px;
+ 
+    background: var(--branco);
+ 
+    border-bottom: 1px solid var(--borda);
+ 
+    padding: 0 5%;
+ 
+    display: flex;
+ 
+    align-items: center;
+ 
+    justify-content: space-between;
+ 
+}
+ 
+ 
+/*
+   Texto pequeno utilizado para identificar
+   a categoria da página.
+*/
+.mini-titulo {
+ 
+    display: block;
+ 
+    font-size: 11px;
+ 
+    font-weight: 700;
+ 
+    letter-spacing: 1.2px;
+ 
+    color: var(--primaria);
+ 
+    margin-bottom: 5px;
+ 
+}
+ 
+ 
+/*
+   Define o tamanho do título principal
+   apresentado no cabeçalho.
+*/
+.topo h1 {
+ 
+    font-size: 24px;
+ 
+}
+ 
+ 
+/*
+   Organiza o avatar e as informações
+   da TechStore no lado direito.
+*/
+.perfil {
+ 
+    display: flex;
+ 
+    align-items: center;
+ 
+    gap: 10px;
+ 
+}
+ 
+ 
+/*
+   Cria o círculo com as letras TS.
+*/
+.avatar {
+ 
+    width: 40px;
+ 
+    height: 40px;
+ 
+    border-radius: 50%;
+ 
+    background: #dbeafe;
+ 
+    color: var(--primaria);
+ 
+    display: flex;
+ 
+    align-items: center;
+ 
+    justify-content: center;
+ 
+    font-size: 13px;
+ 
+    font-weight: 800;
+ 
+}
+ 
+ 
+/*
+   Mostra o nome da loja no perfil.
+*/
+.perfil strong {
+ 
+    display: block;
+ 
+    font-size: 13px;
+ 
+}
+ 
+ 
+/*
+   Mostra o status "Online agora"
+   abaixo do nome da loja.
+*/
+.perfil small {
+ 
+    display: block;
+ 
+    color: var(--suave);
+ 
+    margin-top: 3px;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   ÁREA CENTRAL
+   ========================================================= */
+ 
+/*
+   Define a área onde cada página será apresentada.
+ 
+   O conteúdo fica centralizado e recebe espaçamento
+   suficiente para não ficar encostado nas bordas.
+*/
+.area-central {
+ 
+    max-width: 1400px;
+ 
+    margin: 0 auto;
+ 
+    padding: 42px 5%;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   PÁGINA INICIAL — HERO
+   ========================================================= */
+ 
+/*
+   Cria o grande destaque da página inicial.
+ 
+   O texto fica de um lado e a imagem do computador
+   fica do outro.
+*/
+.hero {
+ 
+    display: grid;
+ 
+    grid-template-columns: 1fr 1fr;
+ 
+    gap: 40px;
+ 
+    align-items: center;
+ 
+    background: var(--branco);
+ 
+    border-radius: 24px;
+ 
+    padding: 42px;
+ 
+    box-shadow: var(--sombra);
+ 
+}
+ 
+ 
+/*
+   Limita a largura do texto do destaque
+   para facilitar a leitura.
+*/
+.hero-texto {
+ 
+    max-width: 600px;
+ 
+}
+ 
+ 
+/*
+   Cria a pequena etiqueta acima
+   do título principal.
+*/
+.etiqueta {
+ 
+    display: inline-block;
+ 
+    padding: 7px 12px;
+ 
+    background: #eff6ff;
+ 
+    color: var(--primaria);
+ 
+    border-radius: 20px;
+ 
+    font-size: 11px;
+ 
+    font-weight: 700;
+ 
+    letter-spacing: 0.8px;
+ 
+}
+ 
+ 
+/*
+   Define o tamanho grande do título principal
+   da página inicial.
+*/
+.hero h2 {
+ 
+    margin-top: 20px;
+ 
+    font-size: clamp(34px, 4vw, 54px);
+ 
+    line-height: 1.08;
+ 
+    letter-spacing: -2px;
+ 
+}
+ 
+ 
+/*
+   Destaca a frase "começa aqui."
+   com a cor principal da loja.
+*/
+.hero h2 span {
+ 
+    color: var(--primaria);
+ 
+}
+ 
+ 
+/*
+   Define o texto explicativo apresentado
+   abaixo do título principal.
+*/
+.hero p {
+ 
+    margin-top: 20px;
+ 
+    max-width: 550px;
+ 
+    color: var(--suave);
+ 
+    line-height: 1.7;
+ 
+}
+ 
+ 
+/*
+   Cria o botão principal utilizado
+   para acessar o catálogo.
+*/
+.botao-principal {
+ 
+    display: inline-flex;
+ 
+    align-items: center;
+ 
+    justify-content: center;
+ 
+    margin-top: 26px;
+ 
+    padding: 13px 20px;
+ 
+    background: var(--primaria);
+ 
+    color: var(--branco);
+ 
+    border-radius: 10px;
+ 
+    font-weight: 700;
+ 
+    border: none;
+ 
+    cursor: pointer;
+ 
+    transition: 0.2s;
+ 
+}
+ 
+ 
+/*
+   Cria uma reação visual quando o usuário
+   passa o mouse sobre o botão.
+*/
+.botao-principal:hover {
+ 
+    background: var(--primaria-escura);
+ 
+    transform: translateY(-2px);
+ 
+}
+ 
+ 
+/*
+   Permite posicionar o selo de produtos
+   sobre a imagem principal.
+*/
+.hero-imagem {
+ 
+    position: relative;
+ 
+}
+ 
+ 
+/*
+   Faz a imagem ocupar toda a área disponível
+   mantendo um tamanho visual consistente.
+*/
+.hero-imagem img {
+ 
+    width: 100%;
+ 
+    height: 360px;
+ 
+    object-fit: cover;
+ 
+    border-radius: 20px;
+ 
+    display: block;
+ 
+}
+ 
+ 
+/*
+   Cria o cartão flutuante que aparece
+   sobre a imagem do computador.
+*/
+.selo-flutuante {
+ 
+    position: absolute;
+ 
+    right: 18px;
+ 
+    bottom: 18px;
+ 
+    background: var(--branco);
+ 
+    padding: 15px 18px;
+ 
+    border-radius: 14px;
+ 
+    box-shadow: var(--sombra);
+ 
+}
+ 
+ 
+/*
+   Destaca o número "8+".
+*/
+.selo-flutuante strong {
+ 
+    display: block;
+ 
+    font-size: 22px;
+ 
+}
+ 
+ 
+/*
+   Explica o que representa o número
+   apresentado no selo.
+*/
+.selo-flutuante span {
+ 
+    display: block;
+ 
+    color: var(--suave);
+ 
+    font-size: 11px;
+ 
+    margin-top: 3px;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   BENEFÍCIOS
+   ========================================================= */
+ 
+/*
+   Organiza os três benefícios em uma linha
+   abaixo do destaque principal.
+*/
+.beneficios {
+ 
+    display: grid;
+ 
+    grid-template-columns: repeat(3, 1fr);
+ 
+    gap: 18px;
+ 
+    margin-top: 22px;
+ 
+}
+ 
+ 
+/*
+   Cria o cartão individual de cada benefício.
+*/
+.beneficio {
+ 
+    background: var(--branco);
+ 
+    border: 1px solid var(--borda);
+ 
+    border-radius: 16px;
+ 
+    padding: 20px;
+ 
+    display: flex;
+ 
+    align-items: center;
+ 
+    gap: 14px;
+ 
+}
+ 
+ 
+/*
+   Destaca os símbolos utilizados
+   para representar cada benefício.
+*/
+.beneficio > span {
+ 
+    font-size: 22px;
+ 
+}
+ 
+ 
+/*
+   Apresenta o título do benefício
+   acima da explicação.
+*/
+.beneficio strong {
+ 
+    display: block;
+ 
+    font-size: 14px;
+ 
+}
+ 
+ 
+/*
+   Apresenta a informação complementar
+   de cada benefício.
+*/
+.beneficio small {
+ 
+    display: block;
+ 
+    color: var(--suave);
+ 
+    margin-top: 4px;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   PRODUTOS
+   ========================================================= */
+ 
+/*
+   Cria espaço entre os benefícios
+   e o catálogo de produtos.
+*/
+.produtos {
+ 
+    margin-top: 52px;
+ 
+}
+ 
+ 
+/*
+   Organiza o título da seção e o contador
+   de produtos na mesma linha.
+*/
+.cabecalho-secao {
+ 
+    display: flex;
+ 
+    justify-content: space-between;
+ 
+    align-items: center;
+ 
+    margin-bottom: 22px;
+ 
+}
+ 
+ 
+/*
+   Define o tamanho do título das seções.
+*/
+.cabecalho-secao h2 {
+ 
+    font-size: 27px;
+ 
+}
+ 
+ 
+/*
+   Cria o pequeno contador de produtos.
+*/
+.contador {
+ 
+    padding: 7px 12px;
+ 
+    background: var(--branco);
+ 
+    border: 1px solid var(--borda);
+ 
+    border-radius: 20px;
+ 
+    color: var(--suave);
+ 
+    font-size: 12px;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   GRADE DE PRODUTOS
+   ========================================================= */
+ 
+/*
+   Organiza os produtos em quatro colunas
+   quando a tela possui espaço suficiente.
+*/
+.grade-produtos {
+ 
+    display: grid;
+ 
+    grid-template-columns: repeat(4, 1fr);
+ 
+    gap: 20px;
+ 
+}
+ 
+ 
+/*
+   Cria o cartão individual de cada produto.
+*/
+.produto-card {
+ 
+    background: var(--branco);
+ 
+    border: 1px solid var(--borda);
+ 
+    border-radius: 18px;
+ 
+    overflow: hidden;
+ 
+    transition: 0.25s;
+ 
+}
+ 
+ 
+/*
+   Quando o mouse passa sobre o produto,
+   o cartão sobe e recebe uma sombra.
+*/
+.produto-card:hover {
+ 
+    transform: translateY(-5px);
+ 
+    box-shadow: var(--sombra);
+ 
+}
+ 
+ 
+/*
+   Permite colocar a etiqueta "DESTAQUE"
+   sobre a imagem.
+*/
+.produto-imagem {
+ 
+    position: relative;
+ 
+    overflow: hidden;
+ 
+}
+ 
+ 
+/*
+   Define o tamanho das imagens dos produtos.
+*/
+.produto-imagem img {
+ 
+    width: 100%;
+ 
+    height: 210px;
+ 
+    object-fit: cover;
+ 
+    display: block;
+ 
+    transition: 0.35s;
+ 
+}
+ 
+ 
+/*
+   Cria um pequeno zoom na imagem
+   quando o mouse passa pelo produto.
+*/
+.produto-card:hover .produto-imagem img {
+ 
+    transform: scale(1.06);
+ 
+}
+ 
+ 
+/*
+   Cria a etiqueta azul "DESTAQUE"
+   sobre a fotografia do produto.
+*/
+.tag-produto {
+ 
+    position: absolute;
+ 
+    top: 12px;
+ 
+    left: 12px;
+ 
+    padding: 6px 9px;
+ 
+    background: var(--primaria);
+ 
+    color: var(--branco);
+ 
+    border-radius: 7px;
+ 
+    font-size: 9px;
+ 
+    font-weight: 800;
+ 
+}
+ 
+ 
+/*
+   Cria o espaço interno onde ficam
+   nome, descrição e preço do produto.
+*/
+.produto-info {
+ 
+    padding: 18px;
+ 
+}
+ 
+ 
+/*
+   Define o tamanho do nome do produto.
+*/
+.produto-info h3 {
+ 
+    font-size: 16px;
+ 
+}
+ 
+ 
+/*
+   Organiza a descrição do produto
+   e mantém os cartões com alturas semelhantes.
+*/
+.produto-info p {
+ 
+    color: var(--suave);
+ 
+    font-size: 12px;
+ 
+    line-height: 1.5;
+ 
+    margin-top: 7px;
+ 
+    min-height: 38px;
+ 
+}
+ 
+ 
+/*
+   Coloca o preço e o botão de compra
+   na mesma linha.
+*/
+.produto-final {
+ 
+    display: flex;
+ 
+    justify-content: space-between;
+ 
+    align-items: end;
+ 
+    gap: 10px;
+ 
+    margin-top: 18px;
+ 
+}
+ 
+ 
+/*
+   Mostra "Por apenas" acima do preço.
+*/
+.produto-final small {
+ 
+    display: block;
+ 
+    color: var(--suave);
+ 
+    font-size: 10px;
+ 
+}
+ 
+ 
+/*
+   Destaca o valor do produto.
+*/
+.produto-final strong {
+ 
+    display: block;
+ 
+    margin-top: 3px;
+ 
+    font-size: 17px;
+ 
+}
+ 
+ 
+/*
+   Cria o botão Comprar de cada produto.
+*/
+.botao-comprar {
+ 
+    padding: 10px 13px;
+ 
+    background: var(--primaria);
+ 
+    color: var(--branco);
+ 
+    border-radius: 8px;
+ 
+    font-size: 11px;
+ 
+    font-weight: 700;
+ 
+    transition: 0.2s;
+ 
+}
+ 
+ 
+/*
+   Escurece o botão quando o usuário
+   passa o mouse sobre ele.
+*/
+.botao-comprar:hover {
+ 
+    background: var(--primaria-escura);
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   CHECKOUT
+   ========================================================= */
+ 
+/*
+   Divide a tela de compra em duas partes:
+   resumo do produto e formas de pagamento.
+*/
+.checkout {
+ 
+    display: grid;
+ 
+    grid-template-columns: 0.9fr 1.1fr;
+ 
+    gap: 24px;
+ 
+}
+ 
+ 
+/*
+   Cria o cartão que apresenta
+   o resumo da compra.
+*/
+.resumo-compra {
+ 
+    background: var(--branco);
+ 
+    border: 1px solid var(--borda);
+ 
+    border-radius: 18px;
+ 
+    padding: 28px;
+ 
+    box-shadow: var(--sombra);
+ 
+}
+ 
+ 
+/*
+   Identifica visualmente o título
+   "PRODUTO SELECIONADO".
+*/
+.resumo-label {
+ 
+    display: block;
+ 
+    color: var(--primaria);
+ 
+    font-size: 10px;
+ 
+    font-weight: 800;
+ 
+    letter-spacing: 1px;
+ 
+}
+ 
+ 
+/*
+   Destaca o nome do produto
+   no resumo da compra.
+*/
+.resumo-compra h3 {
+ 
+    margin-top: 12px;
+ 
+    font-size: 24px;
+ 
+}
+ 
+ 
+/*
+   Apresenta a informação de pagamento único.
+*/
+.resumo-compra p {
+ 
+    margin-top: 8px;
+ 
+    color: var(--suave);
+ 
+}
+ 
+ 
+/*
+   Cria a linha onde o valor do produto
+   fica separado da sua descrição.
+*/
+.linha-preco {
+ 
+    margin-top: 35px;
+ 
+    padding-top: 20px;
+ 
+    border-top: 1px solid var(--borda);
+ 
+    display: flex;
+ 
+    justify-content: space-between;
+ 
+    align-items: center;
+ 
+}
+ 
+ 
+/*
+   Apresenta a descrição "Valor do produto".
+*/
+.linha-preco span {
+ 
+    color: var(--suave);
+ 
+    font-size: 13px;
+ 
+}
+ 
+ 
+/*
+   Destaca o preço final da compra.
+*/
+.linha-preco strong {
+ 
+    font-size: 22px;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   ÁREA DE PAGAMENTO
+   ========================================================= */
+ 
+/*
+   Cria o cartão onde o usuário escolherá
+   entre cartão e Pix.
+*/
+.pagamento {
+ 
+    background: var(--branco);
+ 
+    border: 1px solid var(--borda);
+ 
+    border-radius: 18px;
+ 
+    padding: 28px;
+ 
+    box-shadow: var(--sombra);
+ 
+}
+ 
+ 
+/*
+   Define o título das formas de pagamento.
+*/
+.pagamento h3 {
+ 
+    font-size: 20px;
+ 
+}
+ 
+ 
+/*
+   Cria o texto de orientação abaixo
+   do título de pagamento.
+*/
+.texto-suave {
+ 
+    color: var(--suave);
+ 
+    margin-top: 7px;
+ 
+    font-size: 13px;
+ 
+}
+ 
+ 
+/*
+   Organiza as opções de pagamento
+   uma abaixo da outra.
+*/
+.opcoes-pagamento {
+ 
+    display: flex;
+ 
+    flex-direction: column;
+ 
+    gap: 12px;
+ 
+    margin-top: 24px;
+ 
+}
+ 
+ 
+/*
+   Cria o cartão clicável de cada forma
+   de pagamento.
+*/
+.opcao-pagamento {
+ 
+    display: grid;
+ 
+    grid-template-columns: auto 1fr auto;
+ 
+    align-items: center;
+ 
+    gap: 14px;
+ 
+    padding: 17px;
+ 
+    border: 1px solid var(--borda);
+ 
+    border-radius: 13px;
+ 
+    transition: 0.2s;
+ 
+}
+ 
+ 
+/*
+   Destaca a opção de pagamento quando
+   o usuário passa o mouse.
+*/
+.opcao-pagamento:hover {
+ 
+    border-color: var(--primaria);
+ 
+    background: #f8fbff;
+ 
+    transform: translateX(3px);
+ 
+}
+ 
+ 
+/*
+   Cria o quadrado utilizado para
+   os ícones de pagamento.
+*/
+.icone-pagamento {
+ 
+    width: 38px;
+ 
+    height: 38px;
+ 
+    border-radius: 10px;
+ 
+    background: #eff6ff;
+ 
+    color: var(--primaria);
+ 
+    display: flex;
+ 
+    align-items: center;
+ 
+    justify-content: center;
+ 
+    font-weight: 800;
+ 
+}
+ 
+ 
+/*
+   Destaca o nome Cartão ou Pix.
+*/
+.opcao-pagamento strong {
+ 
+    display: block;
+ 
+    font-size: 14px;
+ 
+}
+ 
+ 
+/*
+   Mostra a descrição abaixo
+   do nome da forma de pagamento.
+*/
+.opcao-pagamento small {
+ 
+    display: block;
+ 
+    color: var(--suave);
+ 
+    margin-top: 4px;
+ 
+    font-size: 11px;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   LINKS DE CANCELAMENTO
+   ========================================================= */
+ 
+/*
+   Cria o link utilizado para abandonar
+   o processo de compra.
+*/
+.link-cancelar {
+ 
+    display: block;
+ 
+    margin-top: 22px;
+ 
+    text-align: center;
+ 
+    color: var(--suave);
+ 
+    font-size: 12px;
+ 
+}
+ 
+ 
+/*
+   Destaca o link de cancelamento
+   quando o usuário passa o mouse.
+*/
+.link-cancelar:hover {
+ 
+    color: var(--texto);
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   FORMULÁRIO DE PAGAMENTO
+   ========================================================= */
+ 
+/*
+   Cria o cartão principal que contém
+   o resumo e o formulário de cartão.
+*/
+.formulario-pagamento {
+ 
+    max-width: 850px;
+ 
+    margin: 0 auto;
+ 
+    background: var(--branco);
+ 
+    border: 1px solid var(--borda);
+ 
+    border-radius: 20px;
+ 
+    padding: 32px;
+ 
+    box-shadow: var(--sombra);
+ 
+}
+ 
+ 
+/*
+   Cria o pequeno resumo do produto
+   no início do formulário.
+*/
+.resumo-mini {
+ 
+    padding: 18px;
+ 
+    background: #f8fafc;
+ 
+    border: 1px solid var(--borda);
+ 
+    border-radius: 13px;
+ 
+    margin-bottom: 28px;
+ 
+}
+ 
+ 
+/*
+   Mostra a frase "Você está comprando".
+*/
+.resumo-mini span {
+ 
+    display: block;
+ 
+    color: var(--suave);
+ 
+    font-size: 11px;
+ 
+}
+ 
+ 
+/*
+   Destaca o nome do produto
+   no resumo do pagamento.
+*/
+.resumo-mini strong {
+ 
+    display: block;
+ 
+    margin-top: 5px;
+ 
+    font-size: 18px;
+ 
+}
+ 
+ 
+/*
+   Destaca o preço do produto
+   dentro do pequeno resumo.
+*/
+.resumo-mini b {
+ 
+    display: block;
+ 
+    margin-top: 7px;
+ 
+    color: var(--primaria);
+ 
+    font-size: 17px;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   CAMPOS DO FORMULÁRIO
+   ========================================================= */
+ 
+/*
+   Organiza cada campo do formulário
+   com seu respectivo título e entrada.
+*/
+.campo {
+ 
+    display: flex;
+ 
+    flex-direction: column;
+ 
+    gap: 7px;
+ 
+}
+ 
+ 
+/*
+   Faz os campos que estão dentro da linha
+   ocuparem o espaço disponível.
+*/
+.linha-formulario .campo {
+ 
+    flex: 1;
+ 
+}
+ 
+ 
+/*
+   Cria o texto que identifica cada campo.
+*/
+.campo label {
+ 
+    font-size: 12px;
+ 
+    font-weight: 700;
+ 
+}
+ 
+ 
+/*
+   Cria a aparência das caixas onde
+   o usuário preencherá os dados.
+*/
+.campo input {
+ 
+    width: 100%;
+ 
+    padding: 13px 14px;
+ 
+    border: 1px solid var(--borda);
+ 
+    border-radius: 9px;
+ 
+    font-family: inherit;
+ 
+    font-size: 13px;
+ 
+    outline: none;
+ 
+    transition: 0.2s;
+ 
+}
+ 
+ 
+/*
+   Quando o usuário seleciona um campo,
+   a borda muda para a cor principal da loja.
+*/
+.campo input:focus {
+ 
+    border-color: var(--primaria);
+ 
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+ 
+}
+ 
+ 
+/*
+   Organiza os campos de titular, validade
+   e código de segurança lado a lado.
+*/
+.linha-formulario {
+ 
+    display: flex;
+ 
+    gap: 15px;
+ 
+    margin-top: 18px;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   BOTÕES DO FORMULÁRIO
+   ========================================================= */
+ 
+/*
+   Organiza os botões Cancelar e Comprar
+   no final do formulário.
+*/
+.acoes-formulario {
+ 
+    display: flex;
+ 
+    justify-content: flex-end;
+ 
+    gap: 12px;
+ 
+    margin-top: 25px;
+ 
+}
+ 
+ 
+/*
+   Cria o botão secundário utilizado
+   para cancelar uma operação.
+*/
+.botao-secundario {
+ 
+    display: inline-flex;
+ 
+    align-items: center;
+ 
+    justify-content: center;
+ 
+    padding: 13px 20px;
+ 
+    border: 1px solid var(--borda);
+ 
+    border-radius: 10px;
+ 
+    color: var(--texto);
+ 
+    font-size: 13px;
+ 
+    font-weight: 700;
+ 
+}
+ 
+ 
+/*
+   Destaca o botão secundário quando
+   o usuário passa o mouse.
+*/
+.botao-secundario:hover {
+ 
+    background: #f8fafc;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   PIX
+   ========================================================= */
+ 
+/*
+   Divide a página Pix em duas partes:
+   informações da compra e QR Code.
+*/
+.pix-pagina {
+ 
+    display: grid;
+ 
+    grid-template-columns: 1fr 1fr;
+ 
+    gap: 24px;
+ 
+}
+ 
+ 
+/*
+   Área onde ficam as informações
+   do produto escolhido para pagamento.
+*/
+.pix-info {
+ 
+    background: var(--branco);
+ 
+    border: 1px solid var(--borda);
+ 
+    border-radius: 20px;
+ 
+    padding: 32px;
+ 
+    box-shadow: var(--sombra);
+ 
+}
+ 
+ 
+/*
+   Destaca o nome do produto
+   na página de Pix.
+*/
+.pix-info h3 {
+ 
+    margin-top: 12px;
+ 
+    font-size: 25px;
+ 
+}
+ 
+ 
+/*
+   Apresenta a explicação sobre
+   o QR Code da simulação.
+*/
+.pix-info p {
+ 
+    margin-top: 10px;
+ 
+    color: var(--suave);
+ 
+    line-height: 1.6;
+ 
+}
+ 
+ 
+/*
+   Destaca o valor que será utilizado
+   na simulação do pagamento.
+*/
+.preco-grande {
+ 
+    display: block;
+ 
+    margin-top: 28px;
+ 
+    font-size: 32px;
+ 
+}
+ 
+ 
+/*
+   Cria o aviso apresentado abaixo
+   das informações do pagamento.
+*/
+.pix-aviso {
+ 
+    display: flex;
+ 
+    align-items: center;
+ 
+    gap: 12px;
+ 
+    margin-top: 28px;
+ 
+    padding: 15px;
+ 
+    background: #f0fdf4;
+ 
+    border: 1px solid #bbf7d0;
+ 
+    border-radius: 12px;
+ 
+}
+ 
+ 
+/*
+   Destaca o símbolo de confirmação
+   utilizado no aviso do Pix.
+*/
+.pix-aviso > span {
+ 
+    width: 34px;
+ 
+    height: 34px;
+ 
+    border-radius: 50%;
+ 
+    background: #dcfce7;
+ 
+    color: var(--sucesso);
+ 
+    display: flex;
+ 
+    align-items: center;
+ 
+    justify-content: center;
+ 
+    font-weight: 800;
+ 
+}
+ 
+ 
+/*
+   Organiza o título e a explicação
+   dentro do aviso.
+*/
+.pix-aviso strong {
+ 
+    display: block;
+ 
+    font-size: 12px;
+ 
+}
+ 
+ 
+/*
+   Mostra que o pagamento é apenas
+   uma simulação acadêmica.
+*/
+.pix-aviso small {
+ 
+    display: block;
+ 
+    color: var(--suave);
+ 
+    margin-top: 3px;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   QR CODE
+   ========================================================= */
+ 
+/*
+   Organiza o QR Code e o botão
+   na área direita da página Pix.
+*/
+.qr-area {
+ 
+    background: var(--branco);
+ 
+    border: 1px solid var(--borda);
+ 
+    border-radius: 20px;
+ 
+    padding: 32px;
+ 
+    box-shadow: var(--sombra);
+ 
+    display: flex;
+ 
+    flex-direction: column;
+ 
+    align-items: center;
+ 
+    justify-content: center;
+ 
+}
+ 
+ 
+/*
+   Cria o espaço branco ao redor do QR Code
+   para destacá-lo visualmente.
+*/
+.qr-box {
+ 
+    padding: 14px;
+ 
+    background: var(--branco);
+ 
+    border: 1px solid var(--borda);
+ 
+    border-radius: 14px;
+ 
+}
+ 
+ 
+/*
+   Define o tamanho visual do QR Code.
+*/
+.qr-box img {
+ 
+    display: block;
+ 
+    width: 260px;
+ 
+    height: 260px;
+ 
+}
+ 
+ 
+/*
+   Faz o botão de confirmação ocupar
+   toda a largura disponível da área Pix.
+*/
+.largura-total {
+ 
+    width: 100%;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   RESULTADO DA COMPRA
+   ========================================================= */
+ 
+/*
+   Centraliza a mensagem de compra concluída
+   dentro da área principal.
+*/
+.resultado {
+ 
+    max-width: 650px;
+ 
+    margin: 40px auto;
+ 
+    text-align: center;
+ 
+}
+ 
+ 
+/*
+   Cria o círculo verde que indica
+   que a compra foi concluída.
+*/
+.icone-sucesso {
+ 
+    width: 76px;
+ 
+    height: 76px;
+ 
+    margin: 0 auto 22px;
+ 
+    border-radius: 50%;
+ 
+    background: #dcfce7;
+ 
+    color: var(--sucesso);
+ 
+    display: flex;
+ 
+    align-items: center;
+ 
+    justify-content: center;
+ 
+    font-size: 35px;
+ 
+    font-weight: 800;
+ 
+}
+ 
+ 
+/*
+   Define o tamanho do título
+   "Produto comprado!".
+*/
+.resultado h2 {
+ 
+    font-size: 32px;
+ 
+}
+ 
+ 
+/*
+   Apresenta a mensagem abaixo
+   do título de confirmação.
+*/
+.resultado > p {
+ 
+    margin-top: 10px;
+ 
+    color: var(--suave);
+ 
+}
+ 
+ 
+/*
+   Cria o cartão com os dados
+   da compra realizada.
+*/
+.resultado-card {
+ 
+    margin-top: 28px;
+ 
+    padding: 24px;
+ 
+    background: var(--branco);
+ 
+    border: 1px solid var(--borda);
+ 
+    border-radius: 16px;
+ 
+    box-shadow: var(--sombra);
+ 
+}
+ 
+ 
+/*
+   Identifica os campos Produto e Valor
+   dentro do resultado.
+*/
+.resultado-card span {
+ 
+    display: block;
+ 
+    color: var(--suave);
+ 
+    font-size: 11px;
+ 
+    margin-top: 10px;
+ 
+}
+ 
+ 
+/*
+   Destaca os valores apresentados
+   no resumo da compra.
+*/
+.resultado-card strong {
+ 
+    display: block;
+ 
+    margin-top: 5px;
+ 
+    font-size: 18px;
+ 
+}
+ 
+ 
+/*
+   Mantém o botão da página de resultado
+   centralizado.
+*/
+.resultado .botao-principal {
+ 
+    margin-top: 25px;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   ESTADO VAZIO
+   ========================================================= */
+ 
+/*
+   Centraliza a mensagem apresentada
+   quando nenhuma compra foi selecionada.
+*/
+.estado-vazio {
+ 
+    max-width: 600px;
+ 
+    margin: 60px auto;
+ 
+    text-align: center;
+ 
+    background: var(--branco);
+ 
+    border: 1px solid var(--borda);
+ 
+    border-radius: 20px;
+ 
+    padding: 45px;
+ 
+    box-shadow: var(--sombra);
+ 
+}
+ 
+ 
+/*
+   Cria o círculo que apresenta
+   o ícone do carrinho.
+*/
+.icone-vazio {
+ 
+    width: 70px;
+ 
+    height: 70px;
+ 
+    margin: 0 auto 20px;
+ 
+    border-radius: 50%;
+ 
+    background: #eff6ff;
+ 
+    display: flex;
+ 
+    align-items: center;
+ 
+    justify-content: center;
+ 
+    font-size: 30px;
+ 
+}
+ 
+ 
+/*
+   Define o título da mensagem
+   quando nenhum produto foi escolhido.
+*/
+.estado-vazio h2 {
+ 
+    font-size: 25px;
+ 
+}
+ 
+ 
+/*
+   Apresenta a explicação abaixo
+   da mensagem principal.
+*/
+.estado-vazio p {
+ 
+    margin-top: 10px;
+ 
+    color: var(--suave);
+ 
+    line-height: 1.6;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   PÁGINA SOBRE
+   ========================================================= */
+ 
+/*
+   Organiza os cartões institucionais
+   da página Sobre em três colunas.
+*/
+.sobre {
+ 
+    display: grid;
+ 
+    grid-template-columns: repeat(3, 1fr);
+ 
+    gap: 20px;
+ 
+}
+ 
+ 
+/*
+   Cria o cartão visual utilizado
+   para cada informação da empresa.
+*/
+.sobre-card {
+ 
+    background: var(--branco);
+ 
+    border: 1px solid var(--borda);
+ 
+    border-radius: 18px;
+ 
+    padding: 28px;
+ 
+    box-shadow: var(--sombra);
+ 
+    transition: 0.2s;
+ 
+}
+ 
+ 
+/*
+   Faz o cartão da página Sobre
+   reagir ao passar do mouse.
+*/
+.sobre-card:hover {
+ 
+    transform: translateY(-4px);
+ 
+}
+ 
+ 
+/*
+   Define o título de cada bloco
+   da página institucional.
+*/
+.sobre-card h3 {
+ 
+    font-size: 20px;
+ 
+    margin-top: 10px;
+ 
+}
+ 
+ 
+/*
+   Organiza os textos explicativos
+   da página Sobre.
+*/
+.sobre-card p {
+ 
+    color: var(--suave);
+ 
+    line-height: 1.7;
+ 
+    margin-top: 12px;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+ 
+/*
+   Cria o rodapé comum utilizado
+   pelas páginas da TechStore.
+*/
+.rodape {
+ 
+    padding: 25px 5%;
+ 
+    border-top: 1px solid var(--borda);
+ 
+    display: flex;
+ 
+    justify-content: space-between;
+ 
+    color: var(--suave);
+ 
+    font-size: 11px;
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   RESPONSIVIDADE — TABLETS
+   ========================================================= */
+ 
+/*
+   Quando a tela fica menor, reduzimos a quantidade
+   de produtos exibidos por linha para evitar
+   que os cartões fiquem muito estreitos.
+*/
+@media (max-width: 1100px) {
+ 
+    .grade-produtos {
+ 
+        grid-template-columns: repeat(3, 1fr);
+ 
+    }
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   RESPONSIVIDADE — TABLETS PEQUENOS
+   ========================================================= */
+ 
+/*
+   A partir deste tamanho, o menu deixa de ficar
+   permanentemente ao lado para liberar espaço
+   para o conteúdo.
+*/
+@media (max-width: 750px) {
+ 
+ 
+    /*
+       O menu passa a ocupar a largura da tela.
+    */
+    .menu-lateral {
+ 
+        position: relative;
+ 
+        width: 100%;
+ 
+        height: auto;
+ 
+    }
+ 
+ 
+    /*
+       Como o menu não está mais fixo ao lado,
+       o conteúdo pode ocupar toda a largura.
+    */
+    .conteudo {
+ 
+        margin-left: 0;
+ 
+    }
+ 
+ 
+    /*
+       O destaque principal passa a utilizar
+       uma coluna para melhorar a leitura.
+    */
+    .hero {
+ 
+        grid-template-columns: 1fr;
+ 
+        padding: 28px;
+ 
+    }
+ 
+ 
+    /*
+       Os benefícios passam a ficar um abaixo
+       do outro em telas menores.
+    */
+    .beneficios {
+ 
+        grid-template-columns: 1fr;
+ 
+    }
+ 
+ 
+    /*
+       Os produtos passam a ser apresentados
+       em duas colunas.
+    */
+    .grade-produtos {
+ 
+        grid-template-columns: repeat(2, 1fr);
+ 
+    }
+ 
+ 
+    /*
+       O menu passa a organizar suas opções
+       horizontalmente quando existe espaço.
+    */
+    .navegacao {
+ 
+        flex-direction: row;
+ 
+        flex-wrap: wrap;
+ 
+    }
+ 
+ 
+    /*
+       Como o menu mudou de posição,
+       o cartão de ajuda recebe espaço acima.
+    */
+    .menu-inferior {
+ 
+        margin-top: 20px;
+ 
+    }
+ 
+ 
+    /*
+       O checkout passa a utilizar uma única coluna.
+    */
+    .checkout {
+ 
+        grid-template-columns: 1fr;
+ 
+    }
+ 
+ 
+    /*
+       O Pix também passa a utilizar uma única coluna.
+    */
+    .pix-pagina {
+ 
+        grid-template-columns: 1fr;
+ 
+    }
+ 
+ 
+    /*
+       Os cartões da página Sobre passam
+       a ficar um abaixo do outro.
+    */
+    .sobre {
+ 
+        grid-template-columns: 1fr;
+ 
+    }
+ 
+}
+ 
+ 
+ 
+/* =========================================================
+   RESPONSIVIDADE — CELULARES
+   ========================================================= */
+ 
+/*
+   Ajusta o cabeçalho para telas pequenas,
+   permitindo que os elementos ocupem melhor
+   o espaço disponível.
+*/
+@media (max-width: 520px) {
+ 
+ 
+    /*
+       O cabeçalho passa a ter altura automática
+       para acomodar seu conteúdo.
+    */
+    .topo {
+ 
+        height: auto;
+ 
+        padding: 20px 5%;
+ 
+        gap: 15px;
+ 
+    }
+ 
+ 
+    /*
+       Esconde o perfil da loja no celular
+       para liberar espaço para o título.
+    */
+    .perfil {
+ 
+        display: none;
+ 
+    }
+ 
+ 
+    /*
+       Reduz o espaço interno da área central
+       para aproveitar melhor a tela pequena.
+    */
+    .area-central {
+ 
+        padding: 25px 4%;
+ 
+    }
+ 
+ 
+    /*
+       Reduz o espaço interno do destaque
+       principal no celular.
+    */
+    .hero {
+ 
+        padding: 22px;
+ 
+    }
+ 
+ 
+    /*
+       Reduz a altura da imagem principal
+       para não ocupar toda a tela.
+    */
+    .hero-imagem img {
+ 
+        height: 250px;
+ 
+    }
+ 
+ 
+    /*
+       Os produtos passam a ocupar
+       uma coluna por vez.
+    */
+    .grade-produtos {
+ 
+        grid-template-columns: 1fr;
+ 
+    }
+ 
+ 
+    /*
+       Faz o título da seção e o contador
+       se acomodarem melhor em telas estreitas.
+    */
+    .cabecalho-secao {
+ 
+        align-items: flex-start;
+ 
+        gap: 10px;
+ 
+    }
+ 
+ 
+    /*
+       O rodapé passa a apresentar suas informações
+       uma abaixo da outra.
+    */
+    .rodape {
+ 
+        flex-direction: column;
+ 
+        gap: 8px;
+ 
+    }
+ 
+ 
+    /*
+       Os campos do formulário deixam de ficar
+       lado a lado e passam a ocupar uma linha cada.
+    */
+    .linha-formulario {
+ 
+        flex-direction: column;
+ 
+    }
+ 
+ 
+    /*
+       Os botões do formulário passam a ocupar
+       uma área mais adequada ao celular.
+    */
+    .acoes-formulario {
+ 
+        flex-direction: column;
+ 
+    }
+ 
+ 
+    /*
+       Faz os dois botões do formulário
+       ocuparem toda a largura disponível.
+    */
+    .acoes-formulario a,
+    .acoes-formulario button {
+ 
+        width: 100%;
+ 
+    }
+ 
+ 
+    /*
+       Reduz o tamanho do QR Code
+       para caber melhor em celulares.
+    */
+    .qr-box img {
+ 
+        width: 220px;
+ 
+        height: 220px;
+ 
+    }
+ 
+ 
+    /*
+       Reduz o título da página de resultado
+       para evitar quebra excessiva de linhas.
+    */
+    .resultado h2 {
+ 
+        font-size: 27px;
+ 
+    }
+ 
+}
+ 
+ 
